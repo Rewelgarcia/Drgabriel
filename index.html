@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Google Ads: setembro x outubro 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script>
+try{var t=localStorage.getItem('th');if(t==='light'||(!t&&matchMedia('(prefers-color-scheme: light)').matches))document.documentElement.classList.remove('dark')}catch(e){}
+</script>
+<style>
+:root{--bg:#f1f4f9;--card:#fff;--ink:#0f1b2d;--mute:#58677f;--line:#e1e7f0;--zebra:#f5f7fb;--s:#9aa8bf;--o:#2563eb;--g:#15803d;--gbg:#dcfce7;--r:#b91c1c;--rbg:#fee2e2;--n:#475569;--nbg:#e7ecf4;--sh:0 1px 2px rgba(15,27,45,.06),0 6px 20px rgba(15,27,45,.06)}
+.dark{--bg:#0a111f;--card:#111b2e;--ink:#e8eefb;--mute:#97a6c2;--line:#212f4b;--zebra:#0e1727;--s:#5f6f8f;--o:#60a5fa;--g:#4ade80;--gbg:#10341d;--r:#f87171;--rbg:#3a1616;--n:#a9b6cf;--nbg:#1b2840;--sh:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25)}
+body{font-family:Manrope,system-ui,sans-serif;background:var(--bg);color:var(--ink);font-variant-numeric:tabular-nums}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--sh)}
+.mute{color:var(--mute)}
+.bd{display:inline-block;border-radius:999px;padding:2px 10px;font-size:12px;font-weight:700;white-space:nowrap}
+.b-g{color:var(--g);background:var(--gbg)}.b-r{color:var(--r);background:var(--rbg)}.b-n{color:var(--n);background:var(--nbg)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{color:var(--mute);font-weight:600;font-size:13px;padding:10px 14px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:10px 14px}
+tbody tr:nth-child(even){background:var(--zebra)}
+.note{border-left:4px solid var(--c);padding-left:16px}
+button:focus-visible,a:focus-visible{outline:2px solid var(--o);outline-offset:2px}
+</style>
+</head>
+<body class="min-h-screen antialiased">
+<main class="max-w-6xl mx-auto px-4 sm:px-6 py-8 space-y-8">
+
+<header class="flex flex-wrap items-start justify-between gap-4">
+  <div class="min-w-0">
+    <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Google Ads: setembro x outubro de 2026</h1>
+    <p class="mute mt-1">Campanha de pesquisa para gerar leads no WhatsApp</p>
+    <p class="mute text-sm">Período comparado: 1 a 26 de setembro x 1 a 26 de outubro de 2026</p>
+    <p class="mute text-xs mt-2 break-all">[R] [SEARCH] [GOIANIA] [05.06] [CIDADES ADICIONADAS]</p>
+  </div>
+  <div class="flex items-center gap-3">
+    <span class="bd b-g inline-flex items-center gap-2"><span class="w-2 h-2 rounded-full" style="background:var(--g)"></span>Campanha ativada</span>
+    <button id="tg" class="card px-3 py-1.5 text-sm font-semibold" type="button"></button>
+  </div>
+</header>
+
+<section aria-label="Resumo executivo">
+  <h2 class="text-lg font-bold mb-3">Resumo executivo</h2>
+  <p class="mute mb-4 max-w-3xl">Outubro gerou mais que o dobro de conversões com praticamente o mesmo investimento. O custo por conversão caiu mais da metade.</p>
+  <div id="kpis" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4"></div>
+</section>
+
+<section class="grid gap-4 lg:grid-cols-5" aria-label="Gráficos">
+  <div class="card p-5 lg:col-span-2">
+    <h2 class="text-lg font-bold">Conversões e investimento</h2>
+    <p class="mute text-sm mb-3">Setembro x outubro, mesmo período de 26 dias</p>
+    <div class="grid grid-cols-2 gap-4">
+      <div><p class="mute text-sm font-semibold mb-1">Conversões</p><div class="h-56"><canvas id="c1" role="img" aria-label="Conversões: 23 em setembro e 58 em outubro"></canvas></div></div>
+      <div><p class="mute text-sm font-semibold mb-1">Investimento</p><div class="h-56"><canvas id="c2" role="img" aria-label="Investimento: R$ 2.149,92 em setembro e R$ 2.399,73 em outubro"></canvas></div></div>
+    </div>
+  </div>
+  <div class="card p-5 lg:col-span-3">
+    <h2 class="text-lg font-bold">Conversões por cidade</h2>
+    <p class="mute text-sm mb-3">Goiânia fez 55 das 58 conversões de outubro</p>
+    <div class="h-64"><canvas id="c3" role="img" aria-label="Conversões por cidade em setembro e outubro"></canvas></div>
+  </div>
+</section>
+
+<section aria-label="Insights e pontos de atenção">
+  <h2 class="text-lg font-bold mb-3">O que explica o resultado</h2>
+  <div class="grid gap-4 lg:grid-cols-3">
+    <article class="card p-5 note" style="--c:var(--o)">
+      <h3 class="font-bold mb-2">O ganho se concentrou em Goiânia</h3>
+      <p class="text-sm leading-relaxed mute">Goiânia passou de 52,2% para 94,8% das conversões e de 68,9% para 90,7% do custo. As conversões foram de 12 para 55, e o custo por conversão caiu de R$ 123,42 para R$ 39,56. Em outubro, Aparecida de Goiânia, Catalão, Trindade e Senador Canedo somaram R$ 107,64 sem nenhuma conversão.</p>
+    </article>
+    <article class="card p-5 note" style="--c:var(--g)">
+      <h3 class="font-bold mb-2">O grupo Transplante Capilar sustenta o resultado</h3>
+      <p class="text-sm leading-relaxed mute">Com verba curta, o investimento foi concentrado nesse grupo: de 33,5% para 82,6% do custo, com 53 das 58 conversões. O grupo anti-queda foi pausado e manteve a taxa (2,91% → 2,61%), e a melhora está quase toda no Transplante (5,10% → 14,52%). Com as taxas de setembro, os 524 cliques de outubro dariam cerca de 23 conversões: a troca de orçamento explica pouco.</p>
+    </article>
+    <article class="card p-5 note" style="--c:var(--r)">
+      <h3 class="font-bold mb-2">Pontos de atenção</h3>
+      <ul class="text-sm leading-relaxed mute space-y-2 list-disc pl-4">
+        <li>Confirme a taxa de conversão de 11,07%: confira a ação de conversão e o histórico de alterações e compare com os contatos reais no WhatsApp.</li>
+        <li>O termo “implante capilar” não teve impressões em setembro e fez 19 conversões em outubro. O CTR de “preço transplante capilar” foi de 5,9% para 21,3%. Veja no histórico o que mudou.</li>
+        <li>“implante capilar goiania” consta como Removido e fez 12 conversões a R$ 26,92. Confirme a palavra-chave por trás dele.</li>
+        <li>O CPC subiu 37,4%, concentrado no grupo Transplante Capilar.</li>
+        <li>Conversão não é lead qualificado: cruze com contatos qualificados e vendas.</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section class="space-y-8" aria-label="Tabelas detalhadas">
+  <div>
+    <h2 class="text-lg font-bold mb-3">Visão geral da campanha</h2>
+    <div class="card overflow-x-auto"><table id="t1" class="min-w-[480px]"></table></div>
+  </div>
+  <div>
+    <h2 class="text-lg font-bold mb-3">Desempenho por cidade</h2>
+    <div class="card overflow-x-auto"><table id="t2" class="min-w-[760px]"></table></div>
+  </div>
+  <div>
+    <h2 class="text-lg font-bold mb-1">Grupos de anúncios</h2>
+    <p class="mute text-sm mb-3">Frontoplastia teve 2 e 6 cliques nos dois meses, volume pequeno demais para leitura. O grupo Transplante Capilar #3 não teve impressões.</p>
+    <div class="card overflow-x-auto"><table id="t3" class="min-w-[820px]"></table></div>
+  </div>
+  <div>
+    <h2 class="text-lg font-bold mb-1">Termos de pesquisa com mais conversões em outubro</h2>
+    <p class="mute text-sm mb-3">Seis termos concentram 53 das 58 conversões e 84% do custo do mês.</p>
+    <div class="card overflow-x-auto"><table id="t4" class="min-w-[720px]"></table></div>
+  </div>
+</section>
+
+<footer class="mute text-xs pb-6">Fonte: exportações do Google Ads, de 1 a 26 de setembro e de 1 a 26 de outubro de 2026. As conversões são as registradas pelo Google Ads e não indicam, por si só, leads qualificados.</footer>
+</main>
+
+<script>
+const $=id=>document.getElementById(id);
+const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+
+/* KPIs */
+const K=[
+ ['Conversões','58','23','+152%','g'],
+ ['Custo por conversão','R$ 41,37','R$ 93,47','−55,7%','g'],
+ ['Investimento total','R$ 2.399,73','R$ 2.149,92','+11,6%','n'],
+ ['Taxa de conversão','11,07%','3,57%','+7,50 p.p.','g']
+];
+$('kpis').innerHTML=K.map(k=>`<div class="card p-5"><p class="mute text-sm font-semibold">${k[0]}</p><p class="text-3xl font-extrabold tracking-tight mt-1">${k[1]}</p><div class="flex items-center justify-between gap-2 mt-3"><span class="mute text-sm">Setembro: ${k[2]}</span><span class="bd b-${k[4]}">${k[3]}</span></div></div>`).join('');
+
+/* Tabelas */
+const T=(id,h,rows)=>{$(id).innerHTML='<thead><tr>'+h.map((x,i)=>`<th class="${i?'text-right':'text-left'}">${x}</th>`).join('')+'</tr></thead><tbody>'+rows.map(r=>'<tr>'+r.map((c,i)=>`<td class="${i?'text-right':'text-left font-semibold'}">${c}</td>`).join('')+'</tr>').join('')+'</tbody>'};
+const B=(v,t)=>`<span class="bd b-${t}">${v}</span>`;
+
+T('t1',['Métrica','Setembro','Outubro','Variação'],[
+ ['Impressões','12.728','7.930',B('−37,7%','n')],
+ ['Cliques','645','524',B('−18,8%','n')],
+ ['CTR','5,07%','6,61%',B('+1,54 p.p.','g')],
+ ['CPC médio','R$ 3,33','R$ 4,58',B('+37,4%','r')],
+ ['Custo total','R$ 2.149,92','R$ 2.399,73',B('+11,6%','n')],
+ ['Conversões','23','58',B('+152,2%','g')],
+ ['Taxa de conversão','3,57%','11,07%',B('+7,50 p.p.','g')],
+ ['Custo por conversão','R$ 93,47','R$ 41,37',B('−55,7%','g')],
+ ['Custo médio por dia','R$ 82,69','R$ 92,30',B('+11,6%','n')],
+ ['Conversões por dia','0,88','2,23',B('+152,2%','g')]
+]);
+
+T('t2',['Cidade','Custo set.','Custo out.','Cliques','Conversões','Custo por conversão','Taxa de conversão'],[
+ ['Goiânia','R$ 1.480,98','R$ 2.175,61','425 → 436','12 → 55','R$ 123,42 → R$ 39,56','2,82% → 12,61%'],
+ ['Aparecida de Goiânia','R$ 257,68','R$ 60,73','83 → 24','4 → 0','R$ 64,42 → sem conversão','4,82% → 0%'],
+ ['Anápolis','R$ 188,20','R$ 77,05','66 → 31','3 → 2','R$ 62,73 → R$ 38,52','4,55% → 6,45%'],
+ ['Rio Verde','R$ 129,81','R$ 39,43','39 → 16','3 → 1','R$ 43,27 → R$ 39,43','7,69% → 6,25%'],
+ ['Catalão','R$ 42,12','R$ 33,24','19 → 12','1 → 0','R$ 42,12 → sem conversão','5,26% → 0%'],
+ ['Trindade','R$ 48,37','R$ 13,67','12 → 5','0 → 0','sem conversão','0%'],
+ ['Senador Canedo','R$ 2,76','R$ 0,00','1 → 0','0 → 0','sem conversão','0%']
+]);
+
+T('t3',['Grupo','Custo','% do custo','Conversões','Custo por conversão','Taxa de conversão','CPC'],[
+ ['Transplante Capilar','R$ 720,17 → R$ 1.981,84','33,5% → 82,6%','10 → 53','R$ 72,02 → R$ 37,39','5,10% → 14,52%','R$ 3,67 → R$ 5,43'],
+ ['Protocolo anti-queda','R$ 1.425,66 → R$ 401,36','66,3% → 16,7%','13 → 4','R$ 109,67 → R$ 100,34','2,91% → 2,61%','R$ 3,19 → R$ 2,62'],
+ ['Frontoplastia','R$ 4,09 → R$ 16,54','0,2% → 0,7%','0 → 1','sem conversão → R$ 16,54','0% → 16,67%','R$ 2,04 → R$ 2,76']
+]);
+
+T('t4',['Termo de pesquisa','Correspondência','Status no relatório','Custo out.','Conversões','Custo por conversão'],[
+ ['implante capilar','Ampla',B('Qualificado','g'),'R$ 418,50','0 → 19','R$ 22,03'],
+ ['implante capilar goiania','Ampla',B('Removido','r'),'R$ 322,99','5 → 12','R$ 26,92'],
+ ['preço transplante capilar','Exata',B('Qualificado','g'),'R$ 407,83','0 → 9','R$ 45,31'],
+ ['transplante capilar goiania','Ampla',B('Qualificado','g'),'R$ 203,82','1 → 5','R$ 40,76'],
+ ['especialista em tratamento capilar','Ampla',B('Não qualificado (grupo pausado)','n'),'R$ 361,08','12 → 4','R$ 90,27'],
+ ['preenchimento capilar','Ampla',B('Removido','r'),'R$ 299,43','1 → 4','R$ 74,86']
+]);
+
+/* Gráficos */
+const vl={id:'vl',afterDatasetsDraw(c,_a,o){const x=c.ctx;x.save();x.font='600 11px Manrope,sans-serif';x.fillStyle=css('--ink');x.textBaseline='middle';
+ c.data.datasets.forEach((d,i)=>c.getDatasetMeta(i).data.forEach((b,j)=>{const t=(o.prefix||'')+d.data[j].toLocaleString('pt-BR',{minimumFractionDigits:o.dec||0,maximumFractionDigits:o.dec||0});
+  if(c.options.indexAxis==='y'){x.textAlign='left';x.fillText(t,b.x+6,b.y)}else{x.textAlign='center';x.fillText(t,b.x,b.y-10)}}));x.restore()}};
+let CH=[];
+function charts(){
+ CH.forEach(c=>c.destroy());CH=[];
+ Chart.defaults.color=css('--mute');Chart.defaults.font.family='Manrope,sans-serif';
+ const S=css('--s'),O=css('--o'),L=css('--line');
+ const base=(extra,pl,legend)=>({responsive:true,maintainAspectRatio:false,plugins:{legend:{display:!!legend,position:'bottom'},vl:pl},...extra});
+ const mk=(id,data,opt)=>CH.push(new Chart($(id),{type:'bar',data,options:opt,plugins:[vl]}));
+ const vert={x:{grid:{display:false}},y:{beginAtZero:true,grace:'18%',grid:{color:L},border:{display:false}}};
+ mk('c1',{labels:['Setembro','Outubro'],datasets:[{data:[23,58],backgroundColor:[S,O],borderRadius:6,maxBarThickness:56}]},base({scales:vert},{}));
+ mk('c2',{labels:['Setembro','Outubro'],datasets:[{data:[2149.92,2399.73],backgroundColor:[S,O],borderRadius:6,maxBarThickness:56}]},base({scales:{...vert,y:{...vert.y,ticks:{callback:v=>'R$ '+v.toLocaleString('pt-BR')}}}},{prefix:'R$ ',dec:2}));
+ mk('c3',{labels:['Goiânia','Aparecida de Goiânia','Anápolis','Rio Verde','Catalão','Trindade','Senador Canedo'],datasets:[
+  {label:'Setembro',data:[12,4,3,3,1,0,0],backgroundColor:S,borderRadius:4,barThickness:11},
+  {label:'Outubro',data:[55,0,2,1,0,0,0],backgroundColor:O,borderRadius:4,barThickness:11}]},
+  base({indexAxis:'y',scales:{x:{beginAtZero:true,grace:'10%',grid:{color:L},border:{display:false}},y:{grid:{display:false}}}},{},true));
+}
+
+/* Tema */
+const lab=()=>{$('tg').textContent=document.documentElement.classList.contains('dark')?'Tema claro':'Tema escuro'};
+$('tg').onclick=()=>{const d=document.documentElement.classList.toggle('dark');try{localStorage.setItem('th',d?'dark':'light')}catch(e){}lab();charts()};
+lab();
+(document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(charts);
+</script>
+</body>
+</html>
